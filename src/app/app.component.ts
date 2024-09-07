@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,16 +12,17 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
   imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, SidenavComponent],
   template: `
     <mat-toolbar class="mat-elevation-z3">
-      <button mat-icon-button>
+      <button mat-icon-button (click)="collapsed.set(!collapsed())">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
 
     <mat-sidenav-container>
-      <mat-sidenav opened mode="side" [style.width]="'250px'">
-        <app-sidenav></app-sidenav>
+      <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-sidenav [collapsed]="collapsed()"></app-sidenav>
       </mat-sidenav>
-      <mat-sidenav-content class="content">
+      <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+        Hee
         <router-outlet />
       </mat-sidenav-content>
     </mat-sidenav-container>
@@ -53,5 +54,8 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
   `],
 })
 export class AppComponent {
-  title = 'sidebar-with-angular-material';
+  title = 'Sidenav';
+  collapsed = signal(false)
+
+  sidenavWidth = computed(() => this.collapsed() ? '65px' : '250px');
 }

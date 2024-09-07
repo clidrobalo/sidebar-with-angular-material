@@ -95,7 +95,7 @@ export type MenuItem = {
         }
 
         .selected-item {
-          border-left-color: blue;
+          border-left-color: var(--primary-color);
           background: rgba(0, 0, 0, 0.04);
         }
       }

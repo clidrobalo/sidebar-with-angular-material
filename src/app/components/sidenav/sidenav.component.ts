@@ -28,9 +28,10 @@ export type MenuItem = {
       <mat-nav-list>
         <a
         mat-list-item
+        class="item"
         *ngFor="let item of menuItems()"
         [routerLink]="item.route"
-        routerLinkActive
+        routerLinkActive="selected-item"
         #rla="routerLinkActive"
         [activated]="rla.isActive">
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
@@ -84,6 +85,16 @@ export type MenuItem = {
 
         > a {
           border-radius: 0;
+        }
+
+        .item {
+          border-left: 5px solid;
+          border-left-color: rgba(0,0,0,0);
+        }
+
+        .selected-item {
+          border-left-color: blue;
+          //background: rgba(0,0,0,0.05);
         }
       }
     }

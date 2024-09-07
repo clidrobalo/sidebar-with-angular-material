@@ -76,6 +76,10 @@ export type MenuItem = {
 
       mat-nav-list {
         text-align: left;
+
+        > a {
+          border-radius: 0;
+        }
       }
     }
   `

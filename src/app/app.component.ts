@@ -22,7 +22,6 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
         <app-sidenav [collapsed]="collapsed()"></app-sidenav>
       </mat-sidenav>
       <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-        Hee
         <router-outlet />
       </mat-sidenav-content>
     </mat-sidenav-container>

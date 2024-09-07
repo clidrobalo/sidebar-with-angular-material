@@ -26,7 +26,13 @@ export type MenuItem = {
       <hr>
 
       <mat-nav-list>
-        <a mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.route">
+        <a
+        mat-list-item
+        *ngFor="let item of menuItems()"
+        [routerLink]="item.route"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [activated]="rla.isActive">
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
           <span matListItemTitle [hidden]="sideNavCollapsed()">{{ item.label }}</span>
         </a>

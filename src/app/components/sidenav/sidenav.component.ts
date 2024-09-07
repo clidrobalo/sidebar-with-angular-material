@@ -40,6 +40,11 @@ export type MenuItem = {
     </div>
   `,
   styles: `
+    :host * {
+      // Animation
+      transition: all 500ms ease-in-out;
+    }
+
     .sidenav-header {
       padding-top: 24px;
       text-align: center;

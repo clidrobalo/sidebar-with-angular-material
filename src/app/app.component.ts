@@ -50,6 +50,11 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
       background: white;
       border-radius: 0;
     }
+
+    // Animation
+    mat-sidenav, mat-sidenav-content {
+      transition: all 500ms ease-in-out;
+    }
   `],
 })
 export class AppComponent {

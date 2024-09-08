@@ -1,5 +1,7 @@
 # SidebarWithAngularMaterial
 
+![image](https://github.com/user-attachments/assets/40d5cfce-11c9-40e7-86cc-1fba3e7c6f28)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
 
 ## Development server
